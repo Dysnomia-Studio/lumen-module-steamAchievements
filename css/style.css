@@ -1,0 +1,8 @@
+.module-steamAchievements {
+	text-align: center;
+}
+
+#module-steamAchievements-table {
+	width: 100%;
+	table-layout: fixed;
+}
