@@ -4,10 +4,10 @@ const STEAM_ID = '';
 
 class SteamAchievements {
 	static async init() {
-		if(!localStorage.steamAchievements) {
+		if(!AppDataManager.exists('steamAchievements', 'steamData')) {
 			await SteamAchievements.fetchData();
 		} else {
-			SteamAchievements.data = JSON.parse(localStorage.steamAchievements);
+			SteamAchievements.data = AppDataManager.loadObject('steamAchievements', 'steamData');
 		}
 
 		SteamAchievements.computeAchievements();
@@ -99,7 +99,7 @@ class SteamAchievements {
 
 	static async fetchData() {
 		SteamAchievements.data = await SteamAchievements.GetPlayerGames();
-		localStorage.steamAchievements = JSON.stringify(SteamAchievements.data);
+		AppDataManager.saveObject('steamAchievements', 'steamData', SteamAchievements.data);
 	}
 }
 
