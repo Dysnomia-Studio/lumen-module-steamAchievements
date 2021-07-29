@@ -1,8 +1,9 @@
 .module-steamAchievements {
 	text-align: center;
+	padding: 0 !important;
 }
 
-#module-steamAchievements-table {
-	width: 100%;
-	table-layout: fixed;
+#module-steamAchievements iframe {
+	height: 650px;
+    width: 100%;
 }
