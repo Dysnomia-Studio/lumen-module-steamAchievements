@@ -1,3 +1,9 @@
-<div class="module module-steamAchievements">
-	<iframe src="https://achieve.games/user/steam/USERNAME" scrolling="no"></iframe>
+<div id="steam-achievements-module" class="module module-steamAchievements">
+	
 </div>
+<script type="text/javascript">
+	window.addEventListener('load', () => {
+		const moduleWindow = document.getElementById('steam-achievements-module');
+		moduleWindow.innerHTML = '<iframe src="https://achieve.games/user/steam/USERNAME" scrolling="no"></iframe>';
+	});
+</script>
