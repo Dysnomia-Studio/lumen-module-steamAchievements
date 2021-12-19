@@ -2,8 +2,8 @@
 	
 </div>
 <script type="text/javascript">
-	window.addEventListener('load', () => {
+	window.addEventListener('load', async() => {
 		const moduleWindow = document.getElementById('steam-achievements-module');
-		moduleWindow.innerHTML = '<iframe src="https://achieve.games/user/steam/USERNAME" scrolling="no"></iframe>';
+		moduleWindow.innerHTML = `<iframe src="https://achieve.games/user/steam/${await ConfigManager.get('steamAchievements', 'username')}" scrolling="no"></iframe>`;
 	});
 </script>
